@@ -33,3 +33,34 @@ let readLine = (n, arr) => {
 
 readLine(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]);
 
+____________________________________________________
+
+  let readLine = (n, arr) => {
+  if (arr.length === 0 || arr.length === 1) {
+    return 0;
+  }
+  const myDrawer = new Map();
+  let result = 0;
+
+  for (const item of arr) {
+    if (!myDrawer.has(item)) {
+      myDrawer.set(item, 1);
+    } else {
+      myDrawer.set(item, myDrawer.get(item) + 1);
+    }
+  }
+  console.log(myDrawer);
+
+  for (const value of myDrawer.values()) {
+      if (value > 1) {
+      if (value % 2 === 0) {
+        result += value/2;
+      } else {
+        result += (value - value % 2) / 2;
+      } 
+    } 
+  }
+  return result;
+}
+readLine(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]);
+
