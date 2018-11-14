@@ -18,4 +18,13 @@ for (word of splited) {
   console.log(result =  result + ' '+ yay);
 }
 return result.trim();
+
+
+
+}
+
+___________________________
+
+function reverseWords(str) {
+ return str.split("").reverse().join("").split(" ").reverse().join(" ");
 }
